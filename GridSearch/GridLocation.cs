@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GridSearch {
-	struct GridLocation {
+namespace GridSearch
+{
+	struct GridLocation
+	{
 		private int x, y;
 
 		public GridLocation(int x, int y) {

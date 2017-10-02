@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GridSearch {
-	class GridMgr {
+namespace GridSearch
+{
+	class GridMgr
+	{
 		Grid _Grid;
 		public GridMgr() {
 		}

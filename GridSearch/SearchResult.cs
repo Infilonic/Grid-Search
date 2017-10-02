@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GridSearch {
-	class SearchResult {
+namespace GridSearch
+{
+	class SearchResult
+	{
 		private GridLocation location;
 		private GridVector direction;
 		private string result;

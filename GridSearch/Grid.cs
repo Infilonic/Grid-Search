@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GridSearch {
-	class Grid {
+namespace GridSearch
+{
+	class Grid
+	{
 		private int rows;
 		private int cols;
 		private char[] letterPool;
@@ -34,8 +36,8 @@ namespace GridSearch {
 
 		public void PopulateGrid() {
 			Random rnd = new Random();
-			for(int x = 0; x < this.cols; x++) {
-				for(int y = 0; y < this.rows; y++) {
+			for (int x = 0; x < this.cols; x++) {
+				for (int y = 0; y < this.rows; y++) {
 					this.gridArray[x, y] = this.letterPool[rnd.Next(0, this.letterPool.Length)];
 				}
 			}
@@ -93,7 +95,8 @@ namespace GridSearch {
 					this.gridArray[newLocation.X, newLocation.Y] = word[i];
 				}
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
 		}
@@ -108,8 +111,8 @@ namespace GridSearch {
 		public List<SearchResult> Search(string searchTerm) {
 			List<SearchResult> results = new List<SearchResult>();
 			GridLocation loc;
-			for(int x = 0; x < this.cols; x++) {
-				for(int y = 0; y < this.rows; y++) {
+			for (int x = 0; x < this.cols; x++) {
+				for (int y = 0; y < this.rows; y++) {
 					loc = new GridLocation(x, y);
 					List<SearchResult> r;
 					if ((r = this.Search(loc, searchTerm)).Count > 0) {
@@ -126,7 +129,7 @@ namespace GridSearch {
 			for (int dir = 0; dir < 8; dir++) {
 				vector = CardinalDirection.ConvertDirection(dir);
 				SearchResult r;
-				if((r = this.Search(location, vector, searchTerm)) != null) {
+				if ((r = this.Search(location, vector, searchTerm)) != null) {
 					results.Add(r);
 				}
 			}
@@ -145,7 +148,8 @@ namespace GridSearch {
 					int nextY = location.Y + direction.Y * i;
 					if (!(this.gridArray[nextX, nextY] == searchTerm[i])) {
 						break;
-					} else if (i == searchTerm.Length - 1) {
+					}
+					else if (i == searchTerm.Length - 1) {
 						result = new SearchResult(location, direction, searchTerm);
 					}
 				}

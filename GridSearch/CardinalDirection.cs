@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GridSearch {
-	class CardinalDirection {
+namespace GridSearch
+{
+	class CardinalDirection
+	{
 		public readonly static GridVector NORTH = new GridVector(0, -1);
 		public readonly static GridVector NORTHEAST = new GridVector(1, -1);
 		public readonly static GridVector EAST = new GridVector(1, 0);
